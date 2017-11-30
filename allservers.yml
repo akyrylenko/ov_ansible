@@ -1,0 +1,13 @@
+---
+# file: allservers.yml
+
+- name: install common data
+  hosts: all
+  remote_user: "{{ provisioner_user }}"
+  become: yes
+  become_method: sudo
+  roles:
+    - common
+    # - hostname
+    - monit
+    # - munin-node

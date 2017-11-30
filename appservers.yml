@@ -1,0 +1,12 @@
+---
+# file: appservers.yml
+- name: install and prepare application
+  hosts: app
+  remote_user: "{{ provisioner_user }}"
+  roles:
+    - application
+    - { role: rvm_io.ruby,
+        become: true,
+        become_user: "{{ deployer_user }}"
+      }
+    - ruby_env

@@ -1,0 +1,16 @@
+# file: staging
+
+[staging]
+172.104.250.75
+
+[web:children]
+staging
+
+[db:children]
+staging
+
+[app:children]
+staging
+
+[monitoring:children]
+staging

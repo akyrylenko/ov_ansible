@@ -1,0 +1,9 @@
+---
+# file: deployer_user.yml
+- name: create deployer user
+  hosts: app
+  remote_user: "{{ provisioner_user }}"
+  become: yes
+  become_method: sudo
+  roles:
+    - deployer_user

@@ -1,0 +1,9 @@
+---
+# file: roles/nodejs/tasks/install.yml
+- name: be sure nodejs is installed
+  become: yes
+  become_method: sudo
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes

@@ -1,0 +1,9 @@
+---
+# file: dbservers.yml
+- name: install and prepare db machine
+  hosts: db
+  remote_user: "{{ provisioner_user }}"
+  become: yes
+  become_method: sudo
+  roles:
+    - postgresql
